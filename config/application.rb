@@ -12,7 +12,7 @@ module AttendanceApp
     config.load_defaults 5.1
     config.time_zone = 'Asia/Tokyo' # この１行をここに追加します。
     config.i18n.default_locale = :ja #デフォルトの言語を日本語に設定しましす。
-    config.i18.load_path += Dir[Rails.root.join('config','locales','**','*.{rb,yml}').to_s]
+    # config.i18.load_path += Dir[Rails.root.join('config','locales','**','*.{rb,yml}').to_s]
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
