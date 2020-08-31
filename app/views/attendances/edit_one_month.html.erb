@@ -16,13 +16,13 @@
       <% @attendances.each do |day| %>
       <tr>
         <td><%= l(day.worked_on, format: :short)%></td>
-        <td><%= $days_of_the_week[day.worked_on.wday%></td>
+        <td><%= $days_of_the_week[day.worked_on.wday] %></td>
         <td></td>
         <td></td>
         <td></td>
         <td></td>
       </tr>
-      <%= end %>
+      <% end %>
     </tbody>
   </table>
 </div>
