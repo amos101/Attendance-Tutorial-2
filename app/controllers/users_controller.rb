@@ -26,9 +26,11 @@ class UsersController < ApplicationController
     else
       render :new
     end
+    
   end
 
   def edit
+    @user = User.find(params[:id])
   end
 
   def update
@@ -60,13 +62,22 @@ class UsersController < ApplicationController
 
   private
 
-  def user_params
-    params.require(:user).permit(:name, :email, :department, :password, :password_confirmation)
-  end
 
-  def basic_info_params
-    params.require(:user).permit(:department, :basic_time, :work_time)
-  end
+    def user_params
+      params.require(:user).permit(:name, :email, :department, :password, :password_confirmation)
+    end
+    
+    
+        # アクセスしたユーザーが現在ログインしているユーザーか確認します。
+    def correct_user
+      @user = User.find(params[:id])
+      redirect_to(root_url) unless @user == current_user
+    end
+    
+  
+    def basic_info_params
+      params.require(:user).permit(:department, :basic_time, :work_time)
+    end
     
   
 end
