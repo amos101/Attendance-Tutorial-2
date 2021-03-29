@@ -15,7 +15,7 @@ class Attendance < ApplicationRecord
 
   def finished_at_is_invalid_without_a_started_at
     if ( !started_at.blank? && finished_at.blank?) || ( started_at.blank? && !finished_at.blank?)
-      errors.add(:started_atm,'test') 
+      errors.add(:started_atm,'必須です') 
     end
     
    
